@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000;
+  margin: 0;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.second-box {
   display: flex;
   flex-direction: column;
+  text-align: center;
+  background-color: #222;
+  border: 3px solid #0ff;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgb(255, 213, 0);
+  padding: 20px;
+  width: 300px;
+}
+
+.display {  
+  height: 50px;
+  background-color: #000;
+  border: 3px solid #0ff;
+  color: #0ff;
+  font-size: 2rem;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0ff;
 }
 
-.App-link {
-  color: #61dafb;
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.keypad button {
+  padding: 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  background-color: #333;
+  color: #0ff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 10px #0ff;
+}
+
+.keypad button:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+.keypad .equals {
+  grid-column: span 4;
+  font-size: larger;
+  color: #0ff;
+}
+
+h5{
+  color: #0ff;
+  text-align: center;
+  letter-spacing: 1px;
+
+}
+
+@media (max-width: 1200px) {
+  .second-box {
+    width: 80%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .keypad button {
+    padding: 18px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .second-box {
+    width: 85%;
+  }
+
+  .display {
+    font-size: 1.8rem;
+  }
+
+  .keypad button {
+    padding: 16px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .second-box {
+    width: 90%;
+  }
+
+  .display {
+    font-size: 1.5rem;
+  }
+
+  .keypad button {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .second-box {
+    width: 95%;
+  }
+
+  .display {
+    font-size: 1.2rem;
+  }
+
+  .keypad button {
+    padding: 12px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .second-box {
+    width: 100%;
+  }
+
+  .display {
+    font-size: 1rem;
+  }
+
+  .keypad button {
+    padding: 10px;
+    font-size: 0.7rem;
   }
 }
